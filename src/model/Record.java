@@ -15,6 +15,4 @@ public class Record {
         dateOfCreate = LocalDate.now();
         dateOfLastChanges = LocalDate.now();
     }
-
-    
 }
