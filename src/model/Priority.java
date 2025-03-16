@@ -11,12 +11,16 @@ public enum Priority {
         this.description = description;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public static Priority getPriority(String description) {
         return switch (description.toLowerCase()) {
             case "low" -> Priority.LOW;
             case "medium" -> Priority.MEDIUM;
             case "high" -> Priority.HIGH;
-            default -> throw new NoSuchElementException("Not such priority");
+            default -> throw new NoSuchElementException("No such priority");
         };
     }
 }

@@ -8,23 +8,45 @@ public class Record {
     private Status status;
     private String description;
     private final LocalDate dateOfCreate;
-    private LocalDate dateOfLastChanges;
 
-    public Record(String name, Priority priority, String description) {
+    public Record(String name, String priority, String description) {
         this.name = name;
-        this.priority = priority;
+        this.priority = Priority.getPriority(priority);
         status = Status.NOT_STARTED;
         dateOfCreate = LocalDate.now();
-        dateOfLastChanges = LocalDate.now();
     }
 
-    public void setPriority(Priority priority) {
-        this.priority = priority;
+    // Setters
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public void setPriority(String priority) {
+        this.priority = Priority.getPriority(priority);
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getters
     public String getName() {
         return name;
     }
 
+    public String getPriority() {
+        return priority.getDescription();
+    }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getDateOfCreate() {
+        return dateOfCreate;
+    }
 }
