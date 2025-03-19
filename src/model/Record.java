@@ -13,6 +13,7 @@ public class Record {
         this.name = name;
         this.priority = Priority.getPriority(priority);
         status = Status.NOT_STARTED;
+        this.description = description;
         dateOfCreate = LocalDate.now();
     }
 
