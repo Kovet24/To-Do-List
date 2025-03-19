@@ -39,8 +39,8 @@ public class Record {
         return name;
     }
 
-    public String getPriority() {
-        return priority.getDescription();
+    public Priority getPriority() {
+        return priority;
     }
 
     public Status getStatus() {
