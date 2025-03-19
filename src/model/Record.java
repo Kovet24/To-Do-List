@@ -54,4 +54,15 @@ public class Record {
     public LocalDate getDateOfCreate() {
         return dateOfCreate;
     }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "name='" + name + '\'' +
+                ", priority=" + priority +
+                ", status=" + status +
+                ", description='" + description + '\'' +
+                ", dateOfCreate=" + dateOfCreate +
+                '}';
+    }
 }
