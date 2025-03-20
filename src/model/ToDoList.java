@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-public class Records {
+public class ToDoList {
     private final Map<String, Record> recordsMap;
 
-    public Records(List<Record> recordList) {
+    public ToDoList(List<Record> recordList) {
         recordsMap = new HashMap<>();
         recordList.forEach(o -> recordsMap.put(o.getName(), o));
     }
