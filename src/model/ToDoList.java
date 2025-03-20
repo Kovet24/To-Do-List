@@ -1,5 +1,7 @@
 package model;
 
+import exception.NotAddedException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,18 +10,22 @@ import java.util.NoSuchElementException;
 public class ToDoList {
     private final Map<String, Record> recordsMap;
 
-    public ToDoList(List<Record> recordList) {
+    public ToDoList() {
         recordsMap = new HashMap<>();
+    }
+
+    public ToDoList(List<Record> recordList) {
+        this();
         recordList.forEach(o -> recordsMap.put(o.getName(), o));
     }
 
-    public boolean addRecord(Record newRecord) {
+    public Record addRecord(Record newRecord) {
         if (!recordsMap.containsKey(newRecord.getName())) {
             recordsMap.put(newRecord.getName(), newRecord);
 
-            return true;
+            return newRecord;
         } else {
-            return false;
+            throw new NotAddedException("This record already added");
         }
     }
 

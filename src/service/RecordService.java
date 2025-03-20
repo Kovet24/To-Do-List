@@ -1,39 +1,29 @@
 package service;
 
-import model.Priority;
 import model.Record;
-import model.Status;
+import model.ToDoList;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
-public class RecordService implements Sortable {
-    @Override
-    public TreeMap<String, Record> sortRecordsByName(Map<String, Record> recordMap) {
-        return new TreeMap<>(recordMap);
+public class RecordService {
+    private final ToDoList toDoList;
+    private final Sorter sorter;
+
+    public RecordService() {
+        toDoList = new ToDoList();
+        sorter = new Sorter();
     }
 
-    @Override
-    public TreeMap<Priority, List<Record>> sortRecordsByPriority(List<Record> recordList) {
-        Map<Priority, List<Record>> recordMap = recordList.stream()
-                .sorted(Comparator.comparing(Record::getName))
-                .collect(Collectors.groupingBy(
-                        Record::getPriority,
-                        Collectors.toList()
-                ));
-
-        return new TreeMap<>(recordMap);
+    public RecordService(List<Record> recordList) {
+        toDoList = new ToDoList(recordList);
+        sorter = new Sorter();
     }
 
-    @Override
-    public TreeMap<Status, List<Record>> sortRecordByStatus(List<Record> recordList) {
-        Map<Status, List<Record>> recordMap = recordList.stream()
-                .sorted(Comparator.comparing(Record::getPriority).thenComparing(Record::getName))
-                .collect(Collectors.groupingBy(
-                        Record::getStatus,
-                        Collectors.toList()
-                ));
+    public Record addRecord(Record newRecord) {
+        return toDoList.addRecord(newRecord);
+    }
 
-        return new TreeMap<>(recordMap);
+    public Record getRecord(String name) {
+        return toDoList.getRecord(name);
     }
 }
