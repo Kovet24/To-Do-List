@@ -3,7 +3,7 @@ package model;
 import java.util.NoSuchElementException;
 
 public enum Priority {
-    LOW("Low"), MEDIUM("Medium"), HIGH("High");
+    HIGH("High"), MEDIUM("Medium"), LOW("Low");
 
     private final String description;
 
