@@ -1,9 +1,11 @@
 package service;
 
+import model.Priority;
 import model.Record;
+import model.Status;
 import model.ToDoList;
 
-import java.util.List;
+import java.util.*;
 
 public class ToDoListService {
     private final ToDoList toDoList;
@@ -25,5 +27,20 @@ public class ToDoListService {
 
     public Record getRecord(String name) {
         return toDoList.getRecord(name);
+    }
+
+    public List<Record> getSortedRecordListByName() {
+        List<Record> recordList = new ArrayList<>(toDoList.getRecordsMap().values());
+        recordList.sort(Comparator.comparing(Record::getName));
+
+        return recordList;
+    }
+
+    public TreeMap<Priority, List<Record>> getSortedRecordMapByPriority() {
+        return sorter.sortRecordsByPriority(new ArrayList<>(toDoList.getRecordsMap().values()));
+    }
+
+    public TreeMap<Status, List<Record>> getSortedRecordMapByStatus() {
+        return sorter.sortRecordByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
     }
 }
