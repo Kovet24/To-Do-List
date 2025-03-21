@@ -49,7 +49,7 @@ public class ToDoListService {
 
     // Method to manipulate record
     public void setNameOfRecord(String name, String newName) {
-        if (!toDoList.getRecordsMap().containsKey(name)) {
+        if (!toDoList.getRecordsMap().containsKey(newName)) {
             Record record = toDoList.getRecord(name);
             record.setName(newName);
 
