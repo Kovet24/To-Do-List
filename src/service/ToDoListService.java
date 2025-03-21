@@ -5,16 +5,16 @@ import model.ToDoList;
 
 import java.util.List;
 
-public class RecordService {
+public class ToDoListService {
     private final ToDoList toDoList;
     private final Sorter sorter;
 
-    public RecordService() {
+    public ToDoListService() {
         toDoList = new ToDoList();
         sorter = new Sorter();
     }
 
-    public RecordService(List<Record> recordList) {
+    public ToDoListService(List<Record> recordList) {
         toDoList = new ToDoList(recordList);
         sorter = new Sorter();
     }
