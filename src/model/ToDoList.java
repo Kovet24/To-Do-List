@@ -36,4 +36,8 @@ public class ToDoList {
             throw new NoSuchElementException("Not such \"%s\" record!".formatted(name));
         }
     }
+
+    public Map<String, Record> getRecordsMap() {
+        return recordsMap;
+    }
 }
