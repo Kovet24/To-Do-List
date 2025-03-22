@@ -17,7 +17,7 @@ public class Record {
         dateOfCreate = LocalDate.now();
     }
 
-    // Setters
+    /** Setters */
     public void setName(String name) {
         this.name = name;
     }
@@ -34,7 +34,7 @@ public class Record {
         this.description = description;
     }
 
-    // Getters
+    /** Getters */
     public String getName() {
         return name;
     }

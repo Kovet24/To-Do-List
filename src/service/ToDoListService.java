@@ -22,7 +22,7 @@ public class ToDoListService {
         sorter = new Sorter();
     }
 
-    // Methods for add and get Record
+    /** Methods for add and get Record */
     public Record addRecord(Record newRecord) {
         return toDoList.addRecord(newRecord);
     }
@@ -31,7 +31,7 @@ public class ToDoListService {
         return toDoList.getRecord(name);
     }
 
-    // Methods for get sorted collections by something of Records
+    /** Methods for get sorted collections by something of Records */
     public List<Record> getSortedRecordListByName() {
         List<Record> recordList = new ArrayList<>(toDoList.getRecordsMap().values());
         recordList.sort(Comparator.comparing(Record::getName));
@@ -47,7 +47,7 @@ public class ToDoListService {
         return sorter.sortRecordByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
     }
 
-    // Method to manipulate record
+    /** Method to manipulate record */
     public void setNameOfRecord(String name, String newName) {
         if (!toDoList.getRecordsMap().containsKey(newName)) {
             Record record = toDoList.getRecord(name);
