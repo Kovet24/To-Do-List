@@ -57,12 +57,6 @@ public class Record {
 
     @Override
     public String toString() {
-        return "Record{" +
-                "name='" + name + '\'' +
-                ", priority=" + priority +
-                ", status=" + status +
-                ", description='" + description + '\'' +
-                ", dateOfCreate=" + dateOfCreate +
-                '}';
+        return "%s | %s | %s | %s | %s".formatted(name, priority, status, description, dateOfCreate);
     }
 }
