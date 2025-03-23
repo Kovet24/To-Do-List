@@ -57,6 +57,6 @@ public class Record {
 
     @Override
     public String toString() {
-        return "%s | %s | %s | %s | %s".formatted(name, priority, status, description, dateOfCreate);
+        return "%s|%s|%s|%s|%s".formatted(name, priority, status, description, dateOfCreate);
     }
 }
