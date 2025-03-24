@@ -44,7 +44,15 @@ public class ToDoListService {
     }
 
     public TreeMap<Status, List<Record>> getSortedRecordMapByStatus() {
-        return sorter.sortRecordByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
+        return sorter.sortRecordsByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
+    }
+
+    public List<Record> getRecordsByPriority(Priority priority) {
+        return sorter.sortRecordsByOnePriority(new ArrayList<>(toDoList.getRecordsMap().values()), priority);
+    }
+
+    public List<Record> getRecordsByStatus(Status status) {
+        return sorter.sortRecordsByOneStatus(new ArrayList<>(toDoList.getRecordsMap().values()), status);
     }
 
     /** Method to manipulate record */

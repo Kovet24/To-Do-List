@@ -29,7 +29,7 @@ class Sorter implements Sortable {
     }
 
     @Override
-    public TreeMap<Status, List<Record>> sortRecordByStatus(List<Record> recordList) {
+    public TreeMap<Status, List<Record>> sortRecordsByStatus(List<Record> recordList) {
         Map<Status, List<Record>> recordMap = recordList.stream()
                 .sorted(Comparator.comparing(Record::getPriority).thenComparing(Record::getName))
                 .collect(Collectors.groupingBy(
@@ -38,5 +38,21 @@ class Sorter implements Sortable {
                 ));
 
         return new TreeMap<>(recordMap);
+    }
+
+    @Override
+    public List<Record> sortRecordsByOnePriority(List<Record> recordList, Priority priority) {
+        return recordList.stream()
+                .filter(r -> r.getPriority() == priority)
+                .sorted(Comparator.comparing(Record::getStatus).thenComparing(Record::getName))
+                .toList();
+    }
+
+    @Override
+    public List<Record> sortRecordsByOneStatus(List<Record> recordList, Status status) {
+        return recordList.stream()
+                .filter(r -> r.getStatus() == status)
+                .sorted(Comparator.comparing(Record::getPriority).thenComparing(Record::getName))
+                .toList();
     }
 }

@@ -13,5 +13,9 @@ public interface Sortable {
 
     TreeMap<Priority, List<Record>> sortRecordsByPriority(List<Record> recordList);
 
-    TreeMap<Status, List<Record>> sortRecordByStatus(List<Record> recordList);
+    TreeMap<Status, List<Record>> sortRecordsByStatus(List<Record> recordList);
+
+    List<Record> sortRecordsByOnePriority(List<Record> recordList, Priority priority);
+
+    List<Record> sortRecordsByOneStatus(List<Record> recordList, Status status);
 }
