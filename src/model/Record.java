@@ -22,8 +22,8 @@ public class Record {
         this.name = name;
     }
 
-    public void setPriority(String priority) {
-        this.priority = Priority.getPriority(priority);
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
     
     public void setStatus(Status status) {

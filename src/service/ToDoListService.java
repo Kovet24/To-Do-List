@@ -68,7 +68,7 @@ public class ToDoListService {
         }
     }
 
-    public void setPriorityOfRecord(String name, String priority) {
+    public void setPriorityOfRecord(String name, Priority priority) {
         toDoList.getRecord(name).setPriority(priority);
     }
 
