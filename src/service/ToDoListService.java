@@ -22,13 +22,17 @@ public class ToDoListService {
         sorter = new Sorter();
     }
 
-    /** Methods for add and get Record */
+    /** Methods for add, get and check Record */
     public Record addRecord(Record newRecord) {
         return toDoList.addRecord(newRecord);
     }
 
     public Record getRecord(String name) {
         return toDoList.getRecord(name);
+    }
+
+    public boolean contains(String name) {
+        return toDoList.getRecordsMap().containsKey(name);
     }
 
     /** Methods for get sorted collections by something of Records */

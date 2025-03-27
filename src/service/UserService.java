@@ -3,6 +3,7 @@ package service;
 import model.Priority;
 import model.Status;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class UserService {
@@ -16,7 +17,11 @@ public class UserService {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите название записи, которое желаете изменить: ");
+
         String name = scanner.nextLine();
+        if (!toDoListService.contains(name)) {
+            throw new NoSuchElementException("Not such \"%s\" record!".formatted(name));
+        }
 
         printMenu();
 
