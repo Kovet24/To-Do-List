@@ -23,7 +23,7 @@ public class UserService {
             throw new NoSuchElementException("Not such \"%s\" record!".formatted(name));
         }
 
-        printMenu();
+        printSetRecordMenu();
 
         boolean isStop = false;
 
@@ -33,22 +33,22 @@ public class UserService {
             switch (choice) {
                 case "1":
                     name = setName(name, scanner);
-                    printMenu();
+                    printSetRecordMenu();
                     break;
 
                 case "2":
                     setPriority(name, scanner);
-                    printMenu();
+                    printSetRecordMenu();
                     break;
 
                 case "3":
                     setStatus(name, scanner);
-                    printMenu();
+                    printSetRecordMenu();
                     break;
 
                 case "4":
                     setDescription(name, scanner);
-                    printMenu();
+                    printSetRecordMenu();
                     break;
 
                 case "5":
@@ -57,7 +57,7 @@ public class UserService {
 
                 default:
                     System.out.println("Ошибка!\n");
-                    printMenu();
+                    printSetRecordMenu();
                     break;
             }
         }
@@ -65,7 +65,7 @@ public class UserService {
         scanner.close();
     }
 
-    private void printMenu() {
+    private void printSetRecordMenu() {
         System.out.println("Выберете изменение:");
         System.out.println("1. Название;\n2. Приоритет;\n3. Статус;\n4. Описание;\n5. Закончить изменения.\n");
     }

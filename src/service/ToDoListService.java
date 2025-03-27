@@ -22,7 +22,7 @@ public class ToDoListService {
         sorter = new Sorter();
     }
 
-    /** Methods for add, get and check Record */
+    /** Methods for add, get and contains Record */
     public Record addRecord(Record newRecord) {
         return toDoList.addRecord(newRecord);
     }
