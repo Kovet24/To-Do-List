@@ -64,6 +64,30 @@ public class UserService {
 
         scanner.close();
     }
+    // Под 4 метода ниже, сделать отдельный/ыу класс/ы
+    public void consoleMenu() {
+
+    }
+
+    private void printMenu() {
+        System.out.println("Введите:");
+        System.out.println("1. Добавление, удаление и изменение задач");
+        System.out.println("2. Вывести на экран задачи;");
+    }
+
+    private void printAddGetSetMenu() {
+        System.out.println("Введите:");
+        System.out.println("1. Добавить запись;");
+        System.out.println("2. Удалить запись;");
+        System.out.println("3. Изменить запись;");
+    }
+
+    private void printRecordsMenu() {
+        System.out.println("Выберите, что вывести на экран:");
+        System.out.println("1. Весь список задач;");
+        System.out.println("2. Список задач отсортированный по приоритетам;");
+        System.out.println("3. Список задач отсортированный по статусу;");
+    }
 
     private void printSetRecordMenu() {
         System.out.println("Выберете изменение:");
