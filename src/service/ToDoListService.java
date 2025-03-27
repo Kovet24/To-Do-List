@@ -35,30 +35,6 @@ public class ToDoListService {
         return toDoList.getRecordsMap().containsKey(name);
     }
 
-    /** Methods for get sorted collections by something of Records */
-    public List<Record> getSortedRecordListByName() {
-        List<Record> recordList = new ArrayList<>(toDoList.getRecordsMap().values());
-        recordList.sort(Comparator.comparing(Record::getName));
-
-        return recordList;
-    }
-
-    public TreeMap<Priority, List<Record>> getSortedRecordMapByPriority() {
-        return sorter.sortRecordsByPriority(new ArrayList<>(toDoList.getRecordsMap().values()));
-    }
-
-    public TreeMap<Status, List<Record>> getSortedRecordMapByStatus() {
-        return sorter.sortRecordsByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
-    }
-
-    public List<Record> getRecordsByPriority(Priority priority) {
-        return sorter.sortRecordsByOnePriority(new ArrayList<>(toDoList.getRecordsMap().values()), priority);
-    }
-
-    public List<Record> getRecordsByStatus(Status status) {
-        return sorter.sortRecordsByOneStatus(new ArrayList<>(toDoList.getRecordsMap().values()), status);
-    }
-
     /** Method to manipulate record */
     public void setNameOfRecord(String name, String newName) {
         if (!toDoList.getRecordsMap().containsKey(newName)) {
@@ -82,5 +58,29 @@ public class ToDoListService {
 
     public void setDescriptionOfRecord(String name, String description) {
         toDoList.getRecord(name).setDescription(description);
+    }
+
+    /** Methods for get sorted collections by something of Records */
+    public List<Record> getSortedRecordListByName() {
+        List<Record> recordList = new ArrayList<>(toDoList.getRecordsMap().values());
+        recordList.sort(Comparator.comparing(Record::getName));
+
+        return recordList;
+    }
+
+    public TreeMap<Priority, List<Record>> getSortedRecordMapByPriority() {
+        return sorter.sortRecordsByPriority(new ArrayList<>(toDoList.getRecordsMap().values()));
+    }
+
+    public TreeMap<Status, List<Record>> getSortedRecordMapByStatus() {
+        return sorter.sortRecordsByStatus(new ArrayList<>(toDoList.getRecordsMap().values()));
+    }
+
+    public List<Record> getRecordsByPriority(Priority priority) {
+        return sorter.sortRecordsByOnePriority(new ArrayList<>(toDoList.getRecordsMap().values()), priority);
+    }
+
+    public List<Record> getRecordsByStatus(Status status) {
+        return sorter.sortRecordsByOneStatus(new ArrayList<>(toDoList.getRecordsMap().values()), status);
     }
 }
