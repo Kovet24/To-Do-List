@@ -23,7 +23,7 @@ public class UserService {
             throw new NoSuchElementException("Not such \"%s\" record!".formatted(name));
         }
 
-        printSetRecordMenu();
+        Printer.printSetRecordMenu();
 
         boolean isStop = false;
 
@@ -33,22 +33,22 @@ public class UserService {
             switch (choice) {
                 case "1":
                     name = setName(name, scanner);
-                    printSetRecordMenu();
+                    Printer.printSetRecordMenu();
                     break;
 
                 case "2":
                     setPriority(name, scanner);
-                    printSetRecordMenu();
+                    Printer.printSetRecordMenu();
                     break;
 
                 case "3":
                     setStatus(name, scanner);
-                    printSetRecordMenu();
+                    Printer.printSetRecordMenu();
                     break;
 
                 case "4":
                     setDescription(name, scanner);
-                    printSetRecordMenu();
+                    Printer.printSetRecordMenu();
                     break;
 
                 case "5":
@@ -57,41 +57,12 @@ public class UserService {
 
                 default:
                     System.out.println("Ошибка!\n");
-                    printSetRecordMenu();
+                    Printer.printSetRecordMenu();
                     break;
             }
         }
 
         scanner.close();
-    }
-    // Под 4 метода ниже, сделать отдельный/ыу класс/ы
-    public void consoleMenu() {
-
-    }
-
-    private void printMenu() {
-        System.out.println("Введите:");
-        System.out.println("1. Добавление, удаление и изменение задач");
-        System.out.println("2. Вывести на экран задачи;");
-    }
-
-    private void printAddGetSetMenu() {
-        System.out.println("Введите:");
-        System.out.println("1. Добавить запись;");
-        System.out.println("2. Удалить запись;");
-        System.out.println("3. Изменить запись;");
-    }
-
-    private void printRecordsMenu() {
-        System.out.println("Выберите, что вывести на экран:");
-        System.out.println("1. Весь список задач;");
-        System.out.println("2. Список задач отсортированный по приоритетам;");
-        System.out.println("3. Список задач отсортированный по статусу;");
-    }
-
-    private void printSetRecordMenu() {
-        System.out.println("Выберете изменение:");
-        System.out.println("1. Название;\n2. Приоритет;\n3. Статус;\n4. Описание;\n5. Закончить изменения.\n");
     }
 
     private String setName(String name, Scanner scanner) {
