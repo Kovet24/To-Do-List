@@ -1,13 +1,9 @@
 package service;
 
 class Printer {
-    public void consoleMenu() {
-
-    }
-
     static void printMenu() {
         System.out.println("Введите:");
-        System.out.println("1. Добавление, удаление и изменение задач");
+        System.out.println("1. Добавление, удаление или изменение задач");
         System.out.println("2. Вывести на экран задачи;");
     }
 
