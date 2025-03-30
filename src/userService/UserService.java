@@ -1,7 +1,8 @@
-package service;
+package userService;
 
 import model.Priority;
 import model.Status;
+import service.ToDoListService;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

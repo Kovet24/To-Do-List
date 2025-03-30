@@ -1,4 +1,4 @@
-package service;
+package userService;
 
 class Printer {
     static void printMenu() {
