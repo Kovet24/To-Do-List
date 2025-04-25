@@ -9,9 +9,9 @@ public class Record {
     private String description;
     private final LocalDate dateOfCreate;
 
-    public Record(String name, String priority, String description) {
+    public Record(String name, Priority priority, String description) {
         this.name = name;
-        this.priority = Priority.getPriority(priority);
+        this.priority = priority;
         status = Status.NOT_STARTED;
         this.description = description;
         dateOfCreate = LocalDate.now();
