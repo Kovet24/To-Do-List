@@ -33,9 +33,11 @@ public class Record {
 
     /**
      * Конструктор создания Record.
-     * Передаётся только имя, приоритет и описание Record.
-     * Статус устанавливается по умолчанию - {@link Status#NOT_STARTED}.
-     * Дата создания задается по {@link LocalDate#now()}.
+     * <p>
+     *     Передаётся только имя, приоритет и описание Record.
+     *      * Статус устанавливается по умолчанию - {@link Status#NOT_STARTED}.
+     *      * Дата создания задается по {@link LocalDate#now()}.
+     * </p>
      *
      * @param name  Имя Record.
      * @param priority  Приоритет Record.
@@ -52,7 +54,7 @@ public class Record {
     }
 
     /**
-     * Метод для изменения имени Record.
+     * Метод изменения имени Record.
      *
      * @param name  Новое имя для Record.
      */
@@ -61,7 +63,7 @@ public class Record {
     }
 
     /**
-     * Метод для изменения приоритета Record.
+     * Метод изменения приоритета Record.
      *
      * @param priority  Новый приоритет для Record.
      */
@@ -70,7 +72,7 @@ public class Record {
     }
 
     /**
-     * Метод для изменения статуса Record.
+     * Метод изменения статуса Record.
      *
      * @param status  Новый статус для Record.
      */
@@ -79,7 +81,7 @@ public class Record {
     }
 
     /**
-     * Метод для изменения описания Record.
+     * Метод изменения описания Record.
      *
      * @param description  Новое описание для Record.
      */
@@ -88,7 +90,7 @@ public class Record {
     }
 
     /**
-     * Метод для получения имени Record.
+     * Метод получения имени Record.
      *
      * @return имя Record.
      */
@@ -97,7 +99,7 @@ public class Record {
     }
 
     /**
-     * Метод для получения приоритета Record.
+     * Метод получения приоритета Record.
      *
      * @return приоритет Record.
      */
@@ -106,7 +108,7 @@ public class Record {
     }
 
     /**
-     * Метод для получения статуса Record.
+     * Метод получения статуса Record.
      *
      * @return статус Record.
      */
@@ -115,7 +117,7 @@ public class Record {
     }
 
     /**
-     * Метод для получения описания Record.
+     * Метод получения описания Record.
      *
      * @return описание Record.
      */
@@ -124,7 +126,7 @@ public class Record {
     }
 
     /**
-     * Метод для получения даты создания Record.
+     * Метод получения даты создания Record.
      *
      * @return дата создания Record.
      */
@@ -132,13 +134,6 @@ public class Record {
         return dateOfCreate;
     }
 
-    /**
-     * Возвращает строковое представления объекта Record.
-     * Поля объекта отображаются без пробелов, через "|", чтобы в дальнейшем
-     * была возможность записывать этот объект в какой-либо файл (.txt например).
-     *
-     * @return String, например: {@code Покупка|MEDIUM|IN_PROCESS|Покупка продуктов|2025-04-29}.
-     */
     @Override
     public String toString() {
         return "%s|%s|%s|%s|%s".formatted(name, priority, status, description, dateOfCreate);
