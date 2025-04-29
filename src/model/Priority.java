@@ -2,7 +2,12 @@ package model;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Enum класс, для перечисления приоритетов: Высокий, Средний и Низкий.
+ */
 public enum Priority {
+    // Конструктор и методы возможно будут удалены в будущем. Будет похоже на Status.
+    // Или будут переделаны, например вместо "High", будет "Высокий".
     HIGH("High"), MEDIUM("Medium"), LOW("Low");
 
     private final String description;

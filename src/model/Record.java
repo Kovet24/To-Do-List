@@ -7,7 +7,7 @@ import java.time.LocalDate;
  */
 public class Record {
     /**
-     * String поле, содержащее имя Record.
+     * String поле, содержащее название Record.
      */
     private String name;
 
@@ -34,12 +34,12 @@ public class Record {
     /**
      * Конструктор создания Record.
      * <p>
-     *     Передаётся только имя, приоритет и описание Record.
+     *     Передаётся только название, приоритет и описание Record.
      *      * Статус устанавливается по умолчанию - {@link Status#NOT_STARTED}.
      *      * Дата создания задается по {@link LocalDate#now()}.
      * </p>
      *
-     * @param name  Имя Record.
+     * @param name  Название Record.
      * @param priority  Приоритет Record.
      * @param description Описание Record.
      *
@@ -54,9 +54,9 @@ public class Record {
     }
 
     /**
-     * Метод изменения имени Record.
+     * Метод изменения названия Record.
      *
-     * @param name  Новое имя для Record.
+     * @param name  Новое название для Record.
      */
     public void setName(String name) {
         this.name = name;
@@ -90,9 +90,9 @@ public class Record {
     }
 
     /**
-     * Метод получения имени Record.
+     * Метод получения названия Record.
      *
-     * @return имя Record.
+     * @return название Record.
      */
     public String getName() {
         return name;
