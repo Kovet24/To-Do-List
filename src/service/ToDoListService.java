@@ -8,29 +8,82 @@ import model.ToDoList;
 
 import java.util.*;
 
+/**
+ * Класс сервис для {@link ToDoList}.
+ * <p>
+ *     Предназначен для совмещения функции добавления/удаления и
+ *     изменения {@link Record}, а также получения отсортированных {@link Record},
+ *     по каким-либо критериям.
+ * </p>
+ */
 public class ToDoListService {
+
+    /**
+     * Поле содержащее {@link ToDoList}, для добавления/удаления и изменения {@link Record}.
+     */
     private final ToDoList toDoList;
+
+    /**
+     * Поле содержащее {@link Sorter}, для получения отсортированных {@link Record}.
+     */
     private final Sorter sorter;
 
+    /**
+     * Дефолтный конструктор.
+     * <p>
+     *     Создает {@link ToDoList} и {@link Sorter} и
+     *     присваивает к соответствующим полям.
+     * </p>
+     *
+     * @see ToDoListService#ToDoListService(List)
+     */
     public ToDoListService() {
         toDoList = new ToDoList();
         sorter = new Sorter();
     }
 
+    /**
+     * Конструктор с параметром типа {@code List<Record>}.
+     * <p>
+     *     Предназначен, если уже существует какой-либо {@code List<Record>}, для передачи его в
+     *     конструктор {@link ToDoList#ToDoList(List)}. Также создает {@link Sorter} и присваивает его к полю.
+     * </p>
+     * @param recordList Передаётся в конструктор {@link ToDoList#ToDoList(List)}.
+     * @see ToDoListService#ToDoListService()
+     */
     public ToDoListService(List<Record> recordList) {
         toDoList = new ToDoList(recordList);
         sorter = new Sorter();
     }
 
-    /** Methods for add, get and contains Record */
+    /**
+     * Вызывает {@link ToDoList#addRecord(Record)}.
+     *
+     * @param newRecord Добавляемый {@link Record} в {@link ToDoList}.
+     * @return Добавленный {@link Record}, при успешном выполнении.
+     */
+    // Может быть добавлю throws.
     public Record addRecord(Record newRecord) {
         return toDoList.addRecord(newRecord);
     }
 
+    /**
+     * Вызывает {@link ToDoList#getRecord(String)}.
+     *
+     * @param name Имя/ключ, чтобы получить конкретный {@link Record}.
+     * @return {@link Record} который запрашивался.
+     */
     public Record getRecord(String name) {
         return toDoList.getRecord(name);
     }
 
+    /**
+     * Вызывает {@link ToDoList#getRecordsMap()}, чтобы вызвать {@link Map#containsKey(Object)}
+     * для проверки наличия {@link Record} в {@link ToDoList}.
+     *
+     * @param name Имя/ключ, чтобы получить конкретный {@link Record}.
+     * @return {@code boolean} в зависимости от наличия {@link Record} в {@link ToDoList}.
+     */
     public boolean contains(String name) {
         return toDoList.getRecordsMap().containsKey(name);
     }

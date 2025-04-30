@@ -10,6 +10,9 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+/**
+ * Класс реализующий интерфейс {@link Sortable}.
+ */
 class Sorter implements Sortable {
     @Override
     public TreeMap<String, Record> sortRecordsByName(Map<String, Record> recordMap) {
