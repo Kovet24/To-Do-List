@@ -88,7 +88,17 @@ public class ToDoListService {
         return toDoList.getRecordsMap().containsKey(name);
     }
 
-    /** Method to manipulate record */
+    /**
+     * Изменяет {@code name} у {@link Record} на новое название {@code newName}.
+     * <p>
+     *     Метод, проверяет в {@link ToDoList} наличие {@link Record} со схожим {@code newName}.
+     *     Если нет, то изменяет у {@link Record}, который получили через параметр {@code name}, и
+     *     изменяет название на {@code newNa,me}
+     * </p>
+     *
+     * @param name
+     * @param newName
+     */
     public void setNameOfRecord(String name, String newName) {
         if (!toDoList.getRecordsMap().containsKey(newName)) {
             Record record = toDoList.getRecord(name);
