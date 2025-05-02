@@ -15,8 +15,10 @@ import java.util.stream.Collectors;
  */
 class Sorter implements Sortable {
     @Override
-    public TreeMap<String, Record> sortRecordsByName(Map<String, Record> recordMap) {
-        return new TreeMap<>(recordMap);
+    public List<Record> sortRecordsByName(List<Record> recordList) {
+        return recordList.stream()
+                .sorted(Comparator.comparing(Record::getName))
+                .collect(Collectors.toList());
     }
 
     @Override

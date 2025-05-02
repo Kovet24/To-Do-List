@@ -5,7 +5,6 @@ import model.Record;
 import model.Status;
 
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -19,11 +18,10 @@ public interface Sortable {
     /**
      * Метод для сортировки {@link Record} по {@code name}.
      *
-     * @param recordMap передаваемая {@link Map} для получения и сортировки {@link Record}.
+     * @param recordList передаваемый {@link List} для получения и сортировки {@link Record}.
      * @return Отсортированный {@link TreeMap} по {@code name}.
      */
-    // Возможно переделаю. В качестве param будет List<Record>.
-    TreeMap<String, Record> sortRecordsByName(Map<String, Record> recordMap);
+    List<Record> sortRecordsByName(List<Record> recordList);
 
     /**
      * Метод для сортировки {@link Record} по {@link Priority}.

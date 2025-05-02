@@ -6,7 +6,10 @@ import model.Record;
 import model.Status;
 import model.ToDoList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Класс сервис для {@link ToDoList}.
@@ -154,18 +157,15 @@ public class ToDoListService {
     }
 
     /**
-     * Возвращает отсортированный {@code List<Record>} по названиям.
+     * Возвращает отсортированный {@code List<Record>} по названиям {@code name}.
      * <p>
-     * НУЖНО ПЕРЕДАЛАТЬ В SORTABLE.
+     * Вызывает {@link Sorter#sortRecordsByName(List)}.
      * </p>
      *
      * @return Отсортированный {@code List<Record>}.
      */
     public List<Record> getSortedRecordListByName() {
-        List<Record> recordList = new ArrayList<>(toDoList.getRecordsMap().values());
-        recordList.sort(Comparator.comparing(Record::getName));
-
-        return recordList;
+        return sorter.sortRecordsByName(new ArrayList<>(toDoList.getRecordsMap().values()));
     }
 
     /**
